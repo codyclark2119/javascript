@@ -34,12 +34,12 @@ celtofahr(25)
 let personAge = 19;
 //Pass in age as a parameter then check that parameter to see if its equal to or greater than 18
 function ageChecker(age) {
-    if (age >= 18) {
-        console.log("Yes you are old enough");
-    }
-    else {
+    //Inital condition to check
+    age >= 18 ? 
+        //Successful check of over 18
+        console.log("Yes you are old enough") :
+        //Unsuccessful check of over 18
         console.log("No you aren't old enough");
-    }
 }
 ageChecker(personAge)
 
@@ -50,12 +50,14 @@ ageChecker(personAge)
 //your code...
 //Inital string
 let string = "The five boxing wizards jump quickly.";
-//Splits the string into an array
-let stringArr = string.split(' ')
-console.log(stringArr);
-//Joins the array to become a normal sentence
-let newString = stringArr.join(' ');
-console.log(newString);
+function strSplit(str){
+    //Splits the string into an array
+    let stringArr = str.split(' ')
+    console.log(stringArr);
+    //Joins the array to become a normal sentence
+    let newString = stringArr.join(' ');
+    console.log(newString);
+}
 
 /************************************************************* */
 // Problem 4:
@@ -92,8 +94,9 @@ function carCreator(make, model, year, color) {
     //returns the object
     return carObj;
 }
-
+//Passing values to create object
 const myCar = carCreator('ford', 'mustang', '2001', 'white');
+//Calling the function to print the car information
 myCar.printStats()
 /************************************************************* */
 // Problem 6:
@@ -103,14 +106,11 @@ myCar.printStats()
 //For loop loops through the code 16 times 
 for (let i = 0; i <= 15; i++) {
     //Checks if there is a remander when divided by two
-    //If not its even
-    if (i % 2 === 0) {
-        console.log(i + ' ' + 'is even')
-    }
-    //If there is a remander it is odd
-    else {
+    i % 2 === 0 ? 
+        //If there is no remainder its even        
+        console.log(i + ' ' + 'is even') :
+        //If there is a remander it is odd
         console.log(i + ' ' + 'is odd')
-    }
 }
 /************************************************************* */
 // Problem 7:
@@ -143,10 +143,8 @@ const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //your code...
 //Loops through the entire array
 for (let i = 0; i < nums.length; i++) {
-    //Checks if dividable by three with no remainder
-    if (nums[i] % 3 === 0) {
-        console.log(nums[i])
-    }
+    //Checks if dividable by three with no remainder if not nothing is done
+    nums[i] % 3 === 0 ? console.log(nums[i]) : null;
 }
 
 
@@ -169,14 +167,11 @@ for (let i = 0; i < foodArray.length; i++) {
         //Converts the array value to a string 
         let food = foodArray[i].toString();
         //Grabs the last letter of the food being checked to see if it is an s
-        if (food.slice(food.length - 1) === 's') {
+        food.slice(food.length - 1) === 's' ?
             //If there is an 's' so we make the middle word 'are' to be gramatically correct for the pluralization
-            console.log(`${food} are ${adjectiveArray[i]}`)
-        }
-        else {
+            console.log(`${food} are ${adjectiveArray[i]}`) :
             //Otherwise we use 'is' for singualar values
             console.log(`${food} is ${adjectiveArray[i]}`)
-        }
     }
     else {
         //The object at the end of the array is handled
