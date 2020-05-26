@@ -89,11 +89,12 @@ function carCreator(make, model, year, color) {
             console.log(`${this.year} ${this.color} ${this.make} ${this.model}`)
         }
     }
-    //Calls the method inside carObj;
-    carObj.printStats();
+    //returns the object
+    return carObj;
 }
 
-carCreator('ford', 'mustang', '2001', 'white');
+const myCar = carCreator('ford', 'mustang', '2001', 'white');
+myCar.printStats()
 /************************************************************* */
 // Problem 6:
 // Write a JavaScript function with a loop that will iterate from 0 to 15. Each iteration, the for loop will check if the current number is odd or even and display the output.
