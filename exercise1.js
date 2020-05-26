@@ -6,6 +6,8 @@
 //your code...
 
 //Part 1
+console.log('------------------------------------------------')
+console.log('Problem 1: Part 1')
 //Inital values
 let currentTemp = 77;
 let celsius;
@@ -16,20 +18,23 @@ function fahrtocel(temp) {
     console.log("Celsius: " + celsius);
 }
 fahrtocel(currentTemp)
-
 // Part 2
+console.log('Problem 1: Part 2')
+
 //Passes in temp value as parameter and converts it to Fahrenheit and saves it to a variable to display.
 function celtofahr(temp) {
     fahrenheit = 32 + (temp * (9 / 5))
     console.log("Fahrenheit: " + fahrenheit)
 }
 celtofahr(25)
-
+console.log('------------------------------------------------')
 /************************************************************* */
 // Problem 2:
 // Write a JavaScript function to determine if someone is old enough to vote. Declare a variable for age and write a conditional statement for whether that age is old enough to vote. Console log "yes" or "no"
 
 //your code...
+console.log('Problem 2: ')
+
 //Inital Value
 let personAge = 19;
 //Pass in age as a parameter then check that parameter to see if its equal to or greater than 18
@@ -42,12 +47,14 @@ function ageChecker(age) {
         console.log("No you aren't old enough");
 }
 ageChecker(personAge)
-
+console.log('------------------------------------------------')
 /************************************************************* */
 // Problem 3:
 // Write a JavaScript function that converts a string to an array. Declare a string variable with "The five boxing wizards jump quickly." Use the split() method to turn the string into an array of strings. (Be sure you separate the string into words, not characters.) After you have finished, use the join() method to change the array back into a string.
 
 //your code...
+console.log('Problem 3: ')
+
 //Inital string
 let string = "The five boxing wizards jump quickly.";
 function strSplit(str){
@@ -58,12 +65,15 @@ function strSplit(str){
     let newString = stringArr.join(' ');
     console.log(newString);
 }
-
+strSplit(string);
+console.log('------------------------------------------------')
 /************************************************************* */
 // Problem 4:
 // Write a JavaScript function with a function that reverses your telephone number. Use the split() and join() methods from the previous problem as well as the toString() method to convert a number into a string and reverse() method to reverse an array in place.
 
 //your code...
+console.log('Problem 4: ')
+
 //Inital values
 let phoneNumber = 9035768;
 //Pulls in number as a parameter
@@ -76,11 +86,14 @@ function numReverse(num) {
     console.log(tempArr.reverse().join(''))
 }
 numReverse(phoneNumber)
+console.log('------------------------------------------------')
 /************************************************************* */
 // Problem 5:
 // Write a JavaScript function that creates a car object using information about your car. Include the make, model, year, and color. Write a function to get the year, color, make, and model in that order.
 
 //your code...
+console.log('Problem 5: ')
+
 //Pulls in the values as parameters
 function carCreator(make, model, year, color) {
     //builds the object out of the parameters
@@ -98,11 +111,14 @@ function carCreator(make, model, year, color) {
 const myCar = carCreator('ford', 'mustang', '2001', 'white');
 //Calling the function to print the car information
 myCar.printStats()
+console.log('------------------------------------------------')
 /************************************************************* */
 // Problem 6:
 // Write a JavaScript function with a loop that will iterate from 0 to 15. Each iteration, the for loop will check if the current number is odd or even and display the output.
 
 //your code...
+console.log('Problem 6: ')
+
 //For loop loops through the code 16 times 
 for (let i = 0; i <= 15; i++) {
     //Checks if there is a remander when divided by two
@@ -112,11 +128,14 @@ for (let i = 0; i <= 15; i++) {
         //If there is a remander it is odd
         console.log(i + ' ' + 'is odd')
 }
+console.log('------------------------------------------------')
 /************************************************************* */
 // Problem 7:
 // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
 //your code...
+console.log('Problem 7: ')
+
 for (let i = 1; i <= 100; i++) {
     //Checks for if its divideable by both
     if (i % 3 === 0 && i % 5 === 0) {
@@ -131,8 +150,7 @@ for (let i = 1; i <= 100; i++) {
         console.log(i + ' ' + 'camp')
     }
 }
-
-
+console.log('------------------------------------------------')
 /************************************************************* */
 // Problem 8:
 const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -141,13 +159,14 @@ const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // and 9: the zeroth, third, sixth, and ninth values.
 
 //your code...
+console.log('Problem 8: ')
+
 //Loops through the entire array
 for (let i = 0; i < nums.length; i++) {
     //Checks if dividable by three with no remainder if not nothing is done
     nums[i] % 3 === 0 ? console.log(nums[i]) : null;
 }
-
-
+console.log('------------------------------------------------')
 // Problem 9:
 const foodArray = ['potatoes', 'tamales', 'lemon', 'strawberries', 'chocolate', 'pudding', { school: 'TEKcamp' }];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
@@ -156,6 +175,7 @@ const adjectiveArray = ['salty', 'spicy', 'sour', 'sweet', 'rich', 'creamy', 'am
 // Using both the foodArray and the adjectiveArray, make a
 // "for" loop that console.log()'s a sentence for each
 // corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  "Potatoes are salty", "Lemon is sour".
+console.log('Problem 9: ')
 
 //Grabs out final value of the array and gets the value assigned to school
 let school = foodArray[foodArray.length - 1].school;
@@ -177,10 +197,11 @@ for (let i = 0; i < foodArray.length; i++) {
         //The object at the end of the array is handled
         console.log(`${foodArray[i].school} is ${adjectiveArray[i]}`)
     }
-
 }
+console.log('------------------------------------------------')
 /************************************************************* */
 // Bonus Assignment: Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly does one of the 4 operations whenever it is run.  the doMath() function should print out what mathetmatical function was carried out.  The doMath() function should return the computed value of any operation performed.
+console.log('Bonus: ')
 
 //Inital operations
 const operations = ['2 + 2', '5 - 1', '6 * 7', '9 / 3'];
