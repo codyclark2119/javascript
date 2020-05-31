@@ -2,37 +2,61 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Shopping list example</title>
-    <style>
-      li {
-        margin-bottom: 10px;
-      }
 
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Shopping list example</title>
+  <link rel="stylesheet" href="shopping-list.css">
+</head>
 
-    <h1>My shopping list</h1>
+<body>
 
-    <div>
-      <label for="item">Enter a new item:</label>
-      <input type="text" name="item" id="item">
-      <button>Add item</button>
-    </div>
+  <h1>My shopping list</h1>
 
-    <ul>
+  <div>
+    <label for="item">Enter a new item:</label>
+    <input type="text" name="item" id="item">
+    <button>Add item</button>
+  </div>
 
-    </ul>
+  <ul>
 
-    <script>
+  </ul>
 
-    </script>
-  </body>
+  <script>
+    //Inital selectors for existing elements
+    const ul = document.querySelector('ul');
+    const button = document.querySelector('button');
+    const input = document.querySelector('#item'); 
+    function btnClick(){
+      //Grabs the value of the input and stores it then clears the input text.
+      const userInput = input.value;
+      input.value = '';
+      //Creates the elements to be appended
+      const li = document.createElement('li');
+      const span = document.createElement('span'); 
+      const btnNew = document.createElement('button');
+      //Appends the span and the new button to the list item
+      li.appendChild(span);
+      li.appendChild(btnNew)
+      //Puts the user text in the span to display and adds text to the new button
+      span.textContent = userInput;
+      btnNew.textContent = 'Delete';
+      //Appends the li holding all the content to the ul
+      ul.appendChild(li);
+      //adds the on click event to run the delItem function
+      btnNew.onclick = delItem;
+      //Keeps the focus on the input so that users can keep adding values.
+      input.focus();
+    }
+
+    function delItem() {
+      //Uses the button as a basis with the this keyword then selects the li as the parent to remove
+      this.parentElement.remove();
+    }
+    //Adds the base on click to the submit button for the form running the main function
+    button.onclick = btnClick;
+  </script>
+</body>
+
 </html>
