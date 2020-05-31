@@ -11,3 +11,12 @@
     justify-content: center;
     margin : 20px;
 }
+
+#lapList {
+    margin : 0 auto;
+    text-align : center;
+    font-size: 25px;
+    border : 5px solid black;
+    width : 500px;
+    display: none;
+}
